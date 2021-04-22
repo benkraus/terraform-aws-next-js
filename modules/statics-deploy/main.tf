@@ -146,7 +146,7 @@ module "lambda_content" {
   source  = "dealmore/download/npm"
   version = "1.0.0"
 
-  module_name    = "@dealmore/terraform-next-deploy-trigger"
+  module_name    = "@kraustifer/terraform-next-deploy-trigger"
   module_version = var.deploy_trigger_module_version
   path_to_file   = "dist.zip"
   use_local      = var.debug_use_local_packages

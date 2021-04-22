@@ -1,11 +1,11 @@
 {
-  "name": "@dealmore/terraform-next-deploy-trigger",
-  "version": "0.3.0",
+  "name": "@kraustifer/terraform-next-deploy-trigger",
+  "version": "0.3.1",
   "main": "index.js",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dealmore/terraform-next.js.git",
+    "url": "https://github.com/benkraus/terraform-next.js.git",
     "directory": "packages/deploy-trigger"
   },
   "scripts": {

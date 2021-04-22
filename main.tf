@@ -48,6 +48,7 @@ module "statics_deploy" {
   tags                             = var.tags
   lambda_role_permissions_boundary = var.lambda_role_permissions_boundary
   use_awscli_for_static_upload     = var.use_awscli_for_static_upload
+  deploy_trigger_module_version    = "0.3.1"
 }
 
 # Lambda

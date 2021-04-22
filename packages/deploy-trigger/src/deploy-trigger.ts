@@ -77,7 +77,7 @@ export async function deployTrigger({
       // Get ContentType
       // Static pre-rendered pages have no file extension,
       // files without extension get HTML mime type as fallback
-      const ContentType = getType(fileName) || 'text/html';
+      const ContentType = getType(fileName) || 'text/plain';
 
       const uploadParams: S3.Types.PutObjectRequest = {
         Bucket: deployBucket,
