@@ -1,7 +1,6 @@
 import { S3 } from 'aws-sdk';
 import unzipper from 'unzipper';
 import { getType } from 'mime';
-import fs from 'fs';
 
 import { deploymentConfigurationKey } from './constants';
 import { generateRandomBuildId } from './utils';
@@ -78,15 +77,9 @@ export async function deployTrigger({
       // Get ContentType
       // Static pre-rendered pages have no file extension,
       // files without extension get HTML mime type as fallback
-      let ContentType = getType(fileName);
-      if (ContentType === null) {
-        const rawData = fs.readFileSync(fileName);
-        try {
-          JSON.parse(rawData.toString());
-          ContentType = "application/json";
-        } catch {
-          ContentType = "text/html";
-        }
+      let ContentType = getType(fileName) || 'text/html';
+      if (fileName === '.well-known/apple-app-site-association') {
+        ContentType = "application/json";
       }
 
       const uploadParams: S3.Types.PutObjectRequest = {
